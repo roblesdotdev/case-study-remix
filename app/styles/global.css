@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --canvas: 37 51% 84%;
+    --panel: 37 36% 76%;
+    --fg-default: 36 9% 11%;
+    --fg-muted: 37 9% 18%;
+    --fg-error: 0 95% 29%;
+    --primary: 29 33% 33%;
+    --on-primary: 0 0% 100%;
+    --border: 37 27% 73%;
+  }
+
+  :root.dark {
+    --canvas: 40 8% 7%;
+    --panel: 40 6% 10%;
+    --fg-default: 69 17% 85%;
+    --fg-muted: 70 10% 77%;
+    --fg-error: 0 100% 73%;
+    --primary: 29 33% 33%;
+    --on-primary: 0 0% 100%;
+    --border: 40 5% 12%;
+  }
+
+  body {
+    @apply min-h-screen min-w-80 overflow-x-hidden bg-canvas text-fg antialiased;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  button,
+  a {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas;
+  }
+}
