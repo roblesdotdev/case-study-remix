@@ -1,3 +1,4 @@
+import { type MetaFunction } from '@remix-run/cloudflare'
 import {
   Links,
   Meta,
@@ -6,7 +7,6 @@ import {
   ScrollRestoration,
 } from '@remix-run/react'
 import '~/styles/global.css'
-import type { MetaFunction } from '@remix-run/cloudflare'
 
 export const meta: MetaFunction = () => {
   return [
