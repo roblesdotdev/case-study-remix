@@ -5,7 +5,19 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import "./tailwind.css";
+import "~/styles/global.css";
+import type { MetaFunction } from "@remix-run/cloudflare";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Tinogasta | Demo" },
+    {
+      name: "description",
+      content:
+        "Case study for an unofficial website for the city of Tinogasta.",
+    },
+  ];
+};
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

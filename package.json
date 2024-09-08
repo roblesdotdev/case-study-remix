@@ -20,7 +20,8 @@
     "@remix-run/react": "^2.11.1",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "remix-development-tools": "^4.4.1"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240903.0",
@@ -44,6 +45,7 @@
     "wrangler": "3.57.1"
   },
   "engines": {
-    "node": ">=20.0.0"
-  }
+    "node": ">=20.17.0"
+  },
+  "packageManager": "pnpm@9.9.0"
 }
