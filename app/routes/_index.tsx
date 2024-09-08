@@ -1,7 +1,7 @@
 export default function Index() {
   return (
-    <div className="min-h-screen py-8 flex-col flex items-center justify-center">
+    <div className="flex min-h-screen flex-col items-center justify-center py-8">
       <h1 className="text-xl font-medium">Working</h1>
     </div>
-  );
+  )
 }

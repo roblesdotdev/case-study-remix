@@ -4,20 +4,20 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
-import "~/styles/global.css";
-import type { MetaFunction } from "@remix-run/cloudflare";
+} from '@remix-run/react'
+import '~/styles/global.css'
+import type { MetaFunction } from '@remix-run/cloudflare'
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Tinogasta | Demo" },
+    { title: 'Tinogasta | Demo' },
     {
-      name: "description",
+      name: 'description',
       content:
-        "Case study for an unofficial website for the city of Tinogasta.",
+        'Case study for an unofficial website for the city of Tinogasta.',
     },
-  ];
-};
+  ]
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -34,9 +34,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
-  );
+  )
 }
 
 export default function App() {
-  return <Outlet />;
+  return <Outlet />
 }
