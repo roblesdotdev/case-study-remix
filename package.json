@@ -20,19 +20,25 @@
     "validate": "run-s typecheck lint format"
   },
   "dependencies": {
+    "@conform-to/react": "^1.1.5",
+    "@conform-to/zod": "^1.1.5",
+    "@epic-web/client-hints": "^1.3.3",
     "@remix-run/cloudflare": "^2.11.1",
     "@remix-run/cloudflare-pages": "^2.11.1",
     "@remix-run/react": "^2.11.1",
+    "cookie": "^0.6.0",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remix-development-tools": "^4.4.1",
-    "remix-flat-routes": "^0.6.5"
+    "remix-flat-routes": "^0.6.5",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240903.0",
     "@eslint/compat": "^1.1.1",
     "@remix-run/dev": "^2.11.1",
+    "@types/cookie": "^0.6.0",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "^10.4.19",
