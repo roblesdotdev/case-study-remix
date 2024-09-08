@@ -12,6 +12,7 @@ import {
   useLoaderData,
 } from '@remix-run/react'
 import '~/styles/global.css'
+import { GlobalLoading } from './components/global-loading'
 import { ThemeSwitch, useTheme } from './routes/resources+/theme-switch'
 import { useNonce } from './utils/nonce-provider'
 import { getTheme } from './utils/theme.server'
@@ -52,6 +53,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <GlobalLoading />
         <header className="flex items-center justify-center py-8">
           <ThemeSwitch userPreference={data.requestInfo.theme} />
         </header>
