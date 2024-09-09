@@ -12,8 +12,10 @@ import {
   useLoaderData,
 } from '@remix-run/react'
 import '~/styles/global.css'
+import { Footer } from './components/footer'
 import { GlobalLoading } from './components/global-loading'
-import { ThemeSwitch, useTheme } from './routes/resources+/theme-switch'
+import { Header } from './components/header'
+import { useTheme } from './routes/resources+/theme-switch'
 import { useNonce } from './utils/nonce-provider'
 import { getTheme } from './utils/theme.server'
 import { ClientHintCheck, getHints } from '~/utils/client-hints'
@@ -52,12 +54,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="flex flex-col">
         <GlobalLoading />
-        <header className="flex items-center justify-center py-8">
-          <ThemeSwitch userPreference={data.requestInfo.theme} />
-        </header>
-        <main>{children}</main>
+        <Header theme={data.requestInfo.theme} />
+        <main className="flex-1">{children}</main>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>
