@@ -9,6 +9,8 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   build: {
+    cssMinify: true,
+    minify: true,
     assetsInlineLimit: (source: string) => {
       if (source.endsWith('sprite.svg') || source.endsWith('favicon.svg')) {
         return false
@@ -24,6 +26,7 @@ export default defineConfig({
         v3_relativeSplatPath: true,
         v3_throwAbortReason: true,
       },
+      serverModuleFormat: 'esm',
       routes: async defineRoutes => {
         return flatRoutes('routes', defineRoutes, {
           ignoredRouteFiles: [
