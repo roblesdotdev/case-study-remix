@@ -8,6 +8,13 @@ import { defineConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
+  build: {
+    assetsInlineLimit: (source: string) => {
+      if (source.endsWith('sprite.svg') || source.endsWith('favicon.svg')) {
+        return false
+      }
+    },
+  },
   plugins: [
     remixDevTools(),
     remixCloudflareDevProxy(),

@@ -15,6 +15,7 @@ import '~/styles/global.css'
 import { Footer } from './components/footer'
 import { GlobalLoading } from './components/global-loading'
 import { Header } from './components/header'
+import { iconsHref } from './components/ui/icon'
 import { useTheme } from './routes/resources+/theme-switch'
 import { useNonce } from './utils/nonce-provider'
 import { getTheme } from './utils/theme.server'
@@ -59,6 +60,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Header theme={data.requestInfo.theme} />
         <main className="flex-1">{children}</main>
         <Footer />
+        <img
+          src={iconsHref}
+          alt=""
+          hidden
+          // this img tag simply forces the icons to be loaded at a higher
+          // priority than the scripts (chrome only for now)
+          // @ts-expect-error -- silly React pretending this attribute doesn't exist
+          fetchpriority="high"
+        />
         <ScrollRestoration />
         <Scripts />
       </body>

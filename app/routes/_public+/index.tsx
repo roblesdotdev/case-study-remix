@@ -1,3 +1,5 @@
+import { Icon } from '~/components/ui/icon'
+
 export default function Index() {
   return (
     <div className="flex flex-col items-center justify-center gap-2 py-12">
@@ -5,8 +7,9 @@ export default function Index() {
       <p className="text-lg text-fg-muted">This is a description</p>
 
       <div className="mt-4 flex items-center gap-3">
-        <button className="inline-flex h-12 items-center justify-center bg-primary px-4 text-sm font-medium text-on-primary">
+        <button className="inline-flex h-12 items-center justify-center gap-1 bg-primary px-4 text-sm font-medium text-on-primary">
           Get started
+          <Icon name="arrow-right" className="h-4 w-4" />
         </button>
         <button className="inline-flex h-12 items-center justify-center border-2 bg-transparent px-4 text-sm font-medium">
           Get started

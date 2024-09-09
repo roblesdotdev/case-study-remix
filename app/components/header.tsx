@@ -1,4 +1,5 @@
 import { Link } from '@remix-run/react'
+import { Icon } from './ui/icon'
 import { ThemeSwitch } from '~/routes/resources+/theme-switch'
 import { type Theme } from '~/utils/theme.server'
 
@@ -15,7 +16,10 @@ export function Header({ theme }: { theme: Theme | null }) {
         </ul>
         <div className="flex items-center gap-4">
           <ThemeSwitch userPreference={theme} />
-          <button className="md:hidden">Menu</button>
+          <button className="md:hidden">
+            <span className="sr-only">Menu</span>
+            <Icon name="hamburger-menu" className="size-4" />
+          </button>
         </div>
       </div>
     </header>
