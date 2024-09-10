@@ -9,12 +9,10 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useLoaderData,
 } from '@remix-run/react'
 import '~/styles/global.css'
 import { Footer } from './components/footer'
 import { GlobalLoading } from './components/global-loading'
-import { Header } from './components/header'
 import { iconsHref } from './components/ui/icon'
 import { useTheme } from './routes/resources+/theme-switch'
 import { useNonce } from './utils/nonce-provider'
@@ -42,22 +40,21 @@ export const meta: MetaFunction = () => {
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const data = useLoaderData<typeof loader>()
   const nonce = useNonce()
   const theme = useTheme()
+  const forceDark = true
   return (
-    <html lang="en" className={theme}>
+    <html lang="es" className={forceDark ? 'dark' : theme}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="color-scheme" content={theme} />
+        <meta name="color-scheme" content={forceDark ? 'dark' : theme} />
         <ClientHintCheck nonce={nonce} />
         <Meta />
         <Links />
       </head>
       <body className="flex flex-col">
         <GlobalLoading />
-        <Header theme={data.requestInfo.theme} />
         <main className="flex-1">{children}</main>
         <Footer />
         <img

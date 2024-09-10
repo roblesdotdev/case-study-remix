@@ -4,6 +4,13 @@ export default {
   darkMode: 'class',
   content: ['./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    container: {
+      center: true,
+      padding: '1.5rem',
+      screens: {
+        '2xl': '90ch',
+      },
+    },
     extend: {
       colors: {
         canvas: 'hsl(var(--canvas))',
