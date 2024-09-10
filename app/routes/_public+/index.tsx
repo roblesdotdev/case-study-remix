@@ -1,6 +1,22 @@
+import { type LoaderFunctionArgs, json } from '@remix-run/cloudflare'
+import { useLoaderData } from '@remix-run/react'
+import { entries } from 'drizzle/schema'
+import { count } from 'drizzle-orm'
+import { GeneralErrorBoundary } from '~/components/error-boundary'
 import { Icon } from '~/components/ui/icon'
+import { buildDb } from '~/utils/db.server'
+
+export async function loader({ context }: LoaderFunctionArgs) {
+  const db = buildDb(context.env)
+  const result = await db.select({ count: count() }).from(entries)
+  return json({
+    total: result[0].count,
+  })
+}
 
 export default function Index() {
+  const data = useLoaderData<typeof loader>()
+
   return (
     <div className="flex flex-col items-center justify-center gap-2 py-12">
       <h1 className="text-2xl font-medium">Working</h1>
@@ -16,6 +32,10 @@ export default function Index() {
         </button>
       </div>
 
+      <div className="pt-8">
+        <p>Total entries: {data.total}</p>
+      </div>
+
       <div className="mt-10 flex flex-col items-center gap-2">
         <input
           type="text"
@@ -25,4 +45,8 @@ export default function Index() {
       </div>
     </div>
   )
+}
+
+export function ErrorBoundary() {
+  return <GeneralErrorBoundary />
 }

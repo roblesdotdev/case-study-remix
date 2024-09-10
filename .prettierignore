@@ -7,3 +7,5 @@ node_modules
 /dist
 /public
 /functions
+
+worker-configuration.d.ts

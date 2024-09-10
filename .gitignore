@@ -9,3 +9,7 @@ node_modules
 
 # generated files
 /app/components/ui/icons
+
+# drizzle
+/drizzle/*.db
+/drizzle/*.db*

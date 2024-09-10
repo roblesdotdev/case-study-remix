@@ -1,8 +1,3 @@
-# Welcome to Remix + Cloudflare!
-
-- 📖 [Remix docs](https://remix.run/docs)
-- 📖 [Remix Cloudflare docs](https://remix.run/guides/vite#cloudflare)
-
 ## Development
 
 Run the dev server:
@@ -16,6 +11,15 @@ To run Wrangler:
 ```sh
 npm run build
 npm run start
+```
+
+## Database
+
+```
+turso db create <database-name>
+turso db show --url <database-name>  # TURSO_DATABASE_URL
+turso db tokens create <database-url>  # TURSO_AUTH_TOKEN
+turso db shell <database-url> < ./drizzle/migrations/<migration-name>.sql
 ```
 
 ## Typegen
@@ -44,4 +48,8 @@ npm run deploy
 
 ## Styling
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+This template comes with [Tailwind CSS](https://tailwindcss.com/) already
+configured for a simple default starting experience. You can use whatever css
+framework you prefer. See the
+[Vite docs on css](https://vitejs.dev/guide/features.html#css) for more
+information.

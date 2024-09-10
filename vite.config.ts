@@ -6,6 +6,7 @@ import { remixDevTools } from 'remix-development-tools'
 import { flatRoutes } from 'remix-flat-routes'
 import { defineConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
+import { getLoadContext } from './load-context'
 
 export default defineConfig({
   build: {
@@ -19,7 +20,7 @@ export default defineConfig({
   },
   plugins: [
     remixDevTools(),
-    remixCloudflareDevProxy(),
+    remixCloudflareDevProxy({ getLoadContext }),
     remix({
       future: {
         v3_fetcherPersist: true,
