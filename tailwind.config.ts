@@ -24,6 +24,9 @@ export default {
         },
         border: 'hsl(var(--border))',
       },
+      screens: {
+        xs: '475px',
+      },
     },
   },
   plugins: [],

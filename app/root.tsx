@@ -30,11 +30,10 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
 export const meta: MetaFunction = () => {
   return [
-    { title: 'Tinogasta | Demo' },
+    { title: 'Case Study | Remix + Cloudflare' },
     {
       name: 'description',
-      content:
-        'Case study for an unofficial website for the city of Tinogasta.',
+      content: 'Case study with remix and cloudflare by Aldo r. Robles.',
     },
   ]
 }
@@ -44,7 +43,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const theme = useTheme()
   const forceDark = true
   return (
-    <html lang="es" className={forceDark ? 'dark' : theme}>
+    <html lang="en" className={forceDark ? 'dark' : theme}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

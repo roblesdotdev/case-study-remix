@@ -1,4 +1,4 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "case-study-tino"
+name = "case-study-remix"
 compatibility_date = "2023-05-18"
 pages_build_output_dir = "./build/client"
